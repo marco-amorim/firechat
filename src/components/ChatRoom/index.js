@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from '../ChatMessage';
 import firebase from 'firebase/app';
@@ -8,6 +8,10 @@ const ChatRoom = () => {
 
 	const firestore = firebase.firestore();
 	const chatBottom = useRef();
+
+	useEffect(() => {
+		chatBottom.current.scrollIntoView({ behavior: 'smooth' });
+	});
 
 	const messagesRef = firestore.collection('messages');
 	const query = messagesRef.orderBy('createdAt').limit(25);
