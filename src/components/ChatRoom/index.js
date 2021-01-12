@@ -30,6 +30,7 @@ const ChatRoom = () => {
 			createdAt: firebase.firestore.FieldValue.serverTimestamp(),
 			uid,
 			photoURL,
+			sentAt: new Date().getHours() + ':' + new Date().getMinutes(),
 		});
 
 		setMsgValue('');
