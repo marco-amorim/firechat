@@ -52,7 +52,7 @@ const ChatRoom = () => {
 					value={msgValue}
 					onChange={(event) => setMsgValue(event.target.value)}
 				/>
-				<button type="submit">Send</button>
+				<button type="submit">💬</button>
 			</form>
 		</>
 	);
