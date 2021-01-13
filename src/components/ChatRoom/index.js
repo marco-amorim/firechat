@@ -2,6 +2,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from '../ChatMessage';
 import firebase from 'firebase/app';
+import {
+	ChatRoomForm,
+	ChatRoomInput,
+	ChatRoomMain,
+	ChatRoomSendButton,
+} from './ChatRoomStyles';
 
 const ChatRoom = () => {
 	const auth = firebase.auth();
@@ -45,20 +51,20 @@ const ChatRoom = () => {
 
 	return (
 		<>
-			<main>
+			<ChatRoomMain>
 				{messages &&
 					messages.map((msg) => <ChatMessage key={msg.id} message={msg} />)}
 
 				<div ref={chatBottom}></div>
-			</main>
+			</ChatRoomMain>
 
-			<form onSubmit={sendMessage}>
-				<input
+			<ChatRoomForm onSubmit={sendMessage}>
+				<ChatRoomInput
 					value={msgValue}
 					onChange={(event) => setMsgValue(event.target.value)}
 				/>
-				<button type="submit">💬</button>
-			</form>
+				<ChatRoomSendButton type="submit">💬</ChatRoomSendButton>
+			</ChatRoomForm>
 		</>
 	);
 };
