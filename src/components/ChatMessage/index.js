@@ -12,11 +12,11 @@ const ChatMessage = ({ message }) => {
 
 	const { text, uid, photoURL, sentAt } = message;
 
-	// const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
+	const isMsgOwner = uid === auth.currentUser.uid;
 
 	return (
 		<React.Fragment>
-			<ChatMessagesContainer isUserMsgOwner={uid === auth.currentUser.uid}>
+			<ChatMessagesContainer isUserMsgOwner={isMsgOwner}>
 				<ChatMessageSentAt>{sentAt}</ChatMessageSentAt>
 				<ChatMessagePicture src={photoURL} alt="Profile" />
 				<ChatMessageText isUserMsgOwner={uid === auth.currentUser.uid}>
