@@ -28,9 +28,9 @@ const ChatRoom = () => {
 
 	const sendMessage = async (e) => {
 		e.preventDefault();
+		setMsgValue('');
 
 		if (!msgValue.replace(/\s/g, '').length) {
-			setMsgValue('');
 			return;
 		}
 
@@ -43,8 +43,6 @@ const ChatRoom = () => {
 			photoURL,
 			sentAt: new Date().getHours() + ':' + new Date().getMinutes(),
 		});
-
-		setMsgValue('');
 
 		chatBottom.current.scrollIntoView({ behavior: 'smooth' });
 	};
