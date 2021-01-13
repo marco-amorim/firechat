@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ChatMessagesContainer = styled.div`
 	display: flex;
@@ -17,16 +17,7 @@ export const ChatMessageText = styled.p`
 	color: white;
 	text-align: center;
 
-	${({ isUserMsgOwner }) =>
-		isUserMsgOwner
-			? `
-  color: white;
-	background: #0b93f6;
-	align-self: flex-end;`
-			: `
-  background: #e5e5ea;
-  color: black;
-  `}
+	${({ isUserMsgOwner }) => (isUserMsgOwner ? senderText : receiverText)}
 `;
 
 export const ChatMessagePicture = styled.img`
@@ -40,4 +31,15 @@ export const ChatMessageSentAt = styled.span`
 	color: white;
 	text-align: right;
 	font-size: 14px;
+`;
+
+const senderText = css`
+	color: white;
+	background: #0b93f6;
+	align-self: flex-end;
+`;
+
+const receiverText = css`
+	background: #e5e5ea;
+	color: black;
 `;
