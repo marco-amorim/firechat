@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase/app';
-import { SignInButton } from './SignInStyles';
+import { SignInButton } from './styles';
 
 const SignIn = () => {
 	const auth = firebase.auth();
