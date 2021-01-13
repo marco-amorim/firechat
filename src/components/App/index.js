@@ -1,14 +1,14 @@
 import React from 'react';
-import SignIn from './components/SignIn';
-import SignOut from './components/SignOut';
-import ChatRoom from './components/ChatRoom';
+import SignIn from '../SignIn';
+import SignOut from '../SignOut';
+import ChatRoom from '../ChatRoom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-import './App.css';
+import { AppContainer, AppHeader, AppSection } from './AppStyles';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyB_Aci0e7uG1VQQgpM9HBzkVOHeB0r52h0',
@@ -28,13 +28,13 @@ function App() {
 	const [user] = useAuthState(auth);
 
 	return (
-		<div className="App">
-			<header className="App-header">
+		<AppContainer>
+			<AppHeader>
 				<h1>FireChat 🔥💬</h1>
 				<SignOut />
-			</header>
-			<section>{user ? <ChatRoom /> : <SignIn />}</section>
-		</div>
+			</AppHeader>
+			<AppSection>{user ? <ChatRoom /> : <SignIn />}</AppSection>
+		</AppContainer>
 	);
 }
 

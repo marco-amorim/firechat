@@ -23,6 +23,11 @@ const ChatRoom = () => {
 	const sendMessage = async (e) => {
 		e.preventDefault();
 
+		if (!msgValue.replace(/\s/g, '').length) {
+			setMsgValue('');
+			return;
+		}
+
 		const { uid, photoURL } = auth.currentUser;
 
 		await messagesRef.add({
