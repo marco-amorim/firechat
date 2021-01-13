@@ -7,7 +7,7 @@ import {
 	ChatRoomInput,
 	ChatRoomMain,
 	ChatRoomSendButton,
-} from './ChatRoomStyles';
+} from './styles';
 
 const ChatRoom = () => {
 	const auth = firebase.auth();

@@ -5,7 +5,7 @@ import {
 	ChatMessagesContainer,
 	ChatMessageSentAt,
 	ChatMessageText,
-} from './ChatMessagesStyles';
+} from './styles';
 
 const ChatMessage = ({ message }) => {
 	const auth = firebase.auth();

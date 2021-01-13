@@ -8,7 +8,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-import { AppContainer, AppHeader, AppSection } from './AppStyles';
+import { AppContainer, AppHeader, AppSection } from './styles';
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyB_Aci0e7uG1VQQgpM9HBzkVOHeB0r52h0',
