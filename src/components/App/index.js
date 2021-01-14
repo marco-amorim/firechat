@@ -11,13 +11,13 @@ import 'firebase/auth';
 import { AppContainer, AppHeader, AppSection } from './styles';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyB_Aci0e7uG1VQQgpM9HBzkVOHeB0r52h0',
-	authDomain: 'firechat-b2d50.firebaseapp.com',
-	projectId: 'firechat-b2d50',
-	storageBucket: 'firechat-b2d50.appspot.com',
-	messagingSenderId: '578815241324',
-	appId: '1:578815241324:web:b3b1fda94d67127300fc49',
-	measurementId: 'G-XLPZ3KPF8F',
+	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+	projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+	storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: process.env.REACT_APP_FIREBASE_MSG_SENDER_ID,
+	appId: process.env.REACT_APP_FIREBASE_APP_ID,
+	measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
