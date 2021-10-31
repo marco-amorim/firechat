@@ -5,3 +5,4 @@
 ## Production
 
 - https://firechat.marcoamorim.com/
+- https://firechat-marcoamorim.vercel.app/
